@@ -32,4 +32,5 @@ class NewsView(TemplateView):
         context["news_description"] = {
             "description": "Тут будет описание"
         }
+        context["range"] = range(5)
         return context
