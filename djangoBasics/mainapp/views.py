@@ -24,3 +24,12 @@ class LoginView(TemplateView):
 
 class NewsView(TemplateView):
     template_name = 'mainapp/news.html'
+
+    # news previous data
+    def get_context_data(self, **kwargs):
+        context = super().get_context_data(**kwargs)
+        context["news_title"] = "что-то новенькое"
+        context["news_description"] = {
+            "description": "Тут будет описание"
+        }
+        return context
