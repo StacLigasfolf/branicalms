@@ -55,7 +55,11 @@ ROOT_URLCONF = 'braincalms.urls'
 TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
-        'DIRS': [],
+        'DIRS': [
+            "templates",
+            "templatetags",
+            "models",
+        ],
         'APP_DIRS': True,
         'OPTIONS': {
             'context_processors': [
