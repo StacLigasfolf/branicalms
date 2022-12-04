@@ -1,5 +1,6 @@
 from django.http import HttpResponse
 from django.views.generic import TemplateView
+from datetime import datetime
 
 
 class ContactsView(TemplateView):
@@ -33,4 +34,5 @@ class NewsView(TemplateView):
             "description": "Тут будет описание"
         }
         context["range"] = range(5)
+        context['datetime_obj'] = datetime.now()
         return context
