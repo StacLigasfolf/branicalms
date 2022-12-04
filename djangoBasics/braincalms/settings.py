@@ -58,6 +58,7 @@ TEMPLATES = [
         'DIRS': [
             "templates",
             "templatetags",
+            "models",
         ],
         'APP_DIRS': True,
         'OPTIONS': {
