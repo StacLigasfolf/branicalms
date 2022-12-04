@@ -57,6 +57,7 @@ TEMPLATES = [
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
         'DIRS': [
             "templates",
+            "templatetags",
         ],
         'APP_DIRS': True,
         'OPTIONS': {
