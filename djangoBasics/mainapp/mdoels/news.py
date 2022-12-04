@@ -22,3 +22,4 @@ class News(models.Model):
     def delete(self, *args):
         self.deleted = True
         self.save()
+        
