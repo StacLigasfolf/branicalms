@@ -1,6 +1,9 @@
+__all__ = ['News']
+
 from django.db import models
 
 
+# Create your models here.
 class News(models.Model):
     title = models.CharField(max_length=256, verbose_name="Title")
     preambule = models.CharField(max_length=1024, verbose_name="Preambule")
@@ -12,7 +15,7 @@ class News(models.Model):
         auto_now_add=True, verbose_name="Created", editable=False
     )
     updated = models.DateTimeField(
-        auto_now=True, verbose_name="Editor", editable=False
+        auto_now=True, verbose_name="Edited", editable=False
     )
     deleted = models.BooleanField(default=False)
 
