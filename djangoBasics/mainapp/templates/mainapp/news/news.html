@@ -1,0 +1,58 @@
+{% extends 'base.html' %}
+
+{% block title %}
+Новости
+{% endblock title %}
+
+{% block content %}
+
+{% if page_num %}
+<div class="card my-2">
+  <div class="card-body">
+    <p class="card-text">Текущая страница: {{ page_num }}</p>
+  </div>
+</div>
+{% endif %}
+
+<div class="row">
+
+  <div class="col-lg-8">
+
+    {% for item in news_qs %}
+      {% include 'mainapp/news/includes/news_item.html' with news=item %}
+    {% endfor %}
+
+  </div>
+
+  <div class="col-lg-4">
+    <div class="card my-2 sticky-top">
+      <div class="card-header">
+        Фильтры
+      </div>
+      <div class="card-body">
+        <form action="">
+          <div class="input-group mb-3">
+            <div class="input-group-prepend">
+              <span class="input-group-text" id="basic-addon1">Дата от...</span>
+            </div>
+            <input type="date" class="form-control" name="dateFrom">
+          </div>
+          <div class="input-group mb-3">
+            <div class="input-group-prepend">
+              <span class="input-group-text" id="basic-addon1">Дата до...</span>
+            </div>
+            <input type="date" class="form-control" name="dateTo">
+          </div>
+
+          <button type="submit"
+            class="btn btn-primary btn-block">Фильтровать</button>
+        </form>
+      </div>
+    </div>
+  </div>
+
+</div>
+
+{% include 'mainapp/includes/pagination.html' %}
+
+{% endblock content %}
